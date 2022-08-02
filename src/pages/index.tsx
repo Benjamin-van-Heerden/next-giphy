@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import { atom, useAtom } from "jotai";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 export const apiKey = "Yvb97o7LIJdKrseZ5U6HuF2bg2vNo89c";
 
