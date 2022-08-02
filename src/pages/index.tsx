@@ -80,8 +80,8 @@ const Home: NextPage<HomeProps> = ({ GifsData }) => {
 			</Head>
 			<div className="text-6xl font-bold text-slate-800 pb-10">Giphy Search App</div>
 			<div className="pb-4">
-				This page is initially statically rendered for "cats" then client side rendered
-				after that
+				This page is initially statically rendered for &quot;cats&quot; then client side
+				rendered after that
 			</div>
 
 			<form className="flex flex-row items-center space-x-4" onSubmit={handleSearch}>
