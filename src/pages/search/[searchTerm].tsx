@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { apiKey } from "../index";
 import Link from "next/link";
 import Footer from "../../components/Footer";
+import Head from "next/head";
 
 interface Gif {
 	title: string;
@@ -38,6 +39,15 @@ const Search: NextPage<SearchProps> = ({ GifsData }) => {
 	const router = useRouter();
 	return (
 		<div className="flex flex-col items-center p-10 font-sans bg-slate-200 h-screen">
+			<Head>
+				<title>Search results for: {router.query.searchTerm}</title>
+				<meta
+					name="description"
+					content={GifsData.map((each, index) => each.title).join(", ")}
+				></meta>
+				<link rel="icon" href="/favicon.ico" />
+				<link rel="stylesheet" href="/styles.css" />
+			</Head>
 			<div className="text-3xl text-slate-800">
 				Search Results For: {router.query.searchTerm}
 			</div>

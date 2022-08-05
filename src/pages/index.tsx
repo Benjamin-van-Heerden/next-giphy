@@ -5,6 +5,8 @@ import { atom, useAtom } from "jotai";
 import { useEffect } from "react";
 import Link from "next/link";
 import Footer from "../components/Footer";
+import Image from "next/image";
+import logo from "../public/logo.png";
 
 export const apiKey = "Yvb97o7LIJdKrseZ5U6HuF2bg2vNo89c";
 
@@ -77,10 +79,18 @@ const Home: NextPage<HomeProps> = ({ GifsData }) => {
 	return (
 		<div className="flex flex-col items-center p-10 font-sans bg-slate-200 h-screen">
 			<Head>
-				<title>Create Next App</title>
+				<title>Giphy Search App</title>
+				<meta
+					name="description"
+					content="This is where the description goes. It will show up in search results."
+				></meta>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
+
 			<div className="text-6xl font-bold text-slate-800 pb-10">Giphy Search App</div>
+			<div className="p-8">
+				<Image src={logo} />
+			</div>
 			<div className="pb-4">
 				This page is initially statically rendered for &quot;cats&quot; then client side
 				rendered after that
