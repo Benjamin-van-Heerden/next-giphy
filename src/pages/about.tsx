@@ -1,3 +1,5 @@
+import Footer from "../components/Footer";
+
 const About = () => {
 	return (
 		<div className="flex flex-col p-10 text-center space-y-3">
@@ -28,6 +30,7 @@ const About = () => {
 				stronger than images and their shorter length make them more digestible than video.
 				That&apos;s the short answer.
 			</div>
+			<Footer link="https://tailwindcss.com/docs/flex-shrink" />
 		</div>
 	);
 };

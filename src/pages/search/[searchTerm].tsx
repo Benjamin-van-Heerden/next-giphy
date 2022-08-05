@@ -1,6 +1,8 @@
 import { GetServerSideProps, GetServerSidePropsContext, NextPage } from "next";
 import { useRouter } from "next/router";
 import { apiKey } from "../index";
+import Link from "next/link";
+import Footer from "../../components/Footer";
 
 interface Gif {
 	title: string;
@@ -39,6 +41,9 @@ const Search: NextPage<SearchProps> = ({ GifsData }) => {
 			<div className="text-3xl text-slate-800">
 				Search Results For: {router.query.searchTerm}
 			</div>
+			<Link href="/">
+				<a className="rounded-md bg-slate-400 text-slate-700 p-4">Home</a>
+			</Link>
 			<div className="">This page is server side rendered</div>
 			<div className="grid grid-cols-3 p-10">
 				{GifsData &&
@@ -51,6 +56,7 @@ const Search: NextPage<SearchProps> = ({ GifsData }) => {
 						);
 					})}
 			</div>
+			<Footer link="https://tailwindcss.com/docs/flex-shrink" />
 		</div>
 	);
 };

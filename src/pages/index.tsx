@@ -3,6 +3,8 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import { atom, useAtom } from "jotai";
 import { useEffect } from "react";
+import Link from "next/link";
+import Footer from "../components/Footer";
 
 export const apiKey = "Yvb97o7LIJdKrseZ5U6HuF2bg2vNo89c";
 
@@ -96,6 +98,13 @@ const Home: NextPage<HomeProps> = ({ GifsData }) => {
 				</button>
 			</form>
 
+			<div className="flex items-center justify-center pt-4">
+				Share this search with others:&nbsp;
+				<Link href="/search/[pid]" as={`/search/${searchTerm}`}>
+					<a className="text-slate-800">{`http://localhost:3000/search/${searchTerm}`}</a>
+				</Link>
+			</div>
+
 			<div className="pt-10">Displaying results for: {searchTerm}</div>
 
 			<div className="grid grid-cols-3 p-10">
@@ -109,6 +118,7 @@ const Home: NextPage<HomeProps> = ({ GifsData }) => {
 						);
 					})}
 			</div>
+			<Footer link="https://tailwindcss.com/docs/flex-shrink" />
 		</div>
 	);
 };
